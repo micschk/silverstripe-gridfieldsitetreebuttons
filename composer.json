@@ -11,7 +11,7 @@
         "silverstripe/framework": "~3.0"
     },
 	"suggest": {
-		"micschk/silverstripe-excludechildren": "Hide subpages from sitetree (and manage them in a gridfield)"
+		"micschk/silverstripe-excludechildren": "Hide subpages from sitetree (manage them from a gridfield instead)"
 	},
 	"extra": {
 		"installer-name": "gridfieldsitetreebuttons"
