@@ -1,6 +1,6 @@
 {
     "name": "micschk/silverstripe-gridfieldsitetreebuttons",
-    "description": "Provides an extension to limit subpages shown in sitetree",
+    "description": "Adds regular sitetree-edit buttons for pages managed in a Gridfield (simple alternative for versionedgridfield)",
     "type": "silverstripe-module",
     "keywords": ["silverstripe", "excludechildren", "sitetree", "gridfield"],
     "authors": [
