@@ -5,6 +5,7 @@
 class GridFieldAddNewSiteTreeItemButton extends GridFieldAddNewButton {
 
 	public function getHTMLFragments($gridField) {
+		
 		if(!$this->buttonName) {
 			// provide a default button name, can be changed by calling {@link setButtonName()} on this component
 			$objectName = singleton($gridField->getModelClass())->i18n_singular_name();

@@ -1,3 +1,3 @@
 <?php
 
-define('GRIDFIELD_SITETREEBUTTONS_DIR',basename(dirname(__FILE__)));
+define('GRIDFIELDSITETREEBUTTONS_DIR',basename(dirname(__FILE__)));

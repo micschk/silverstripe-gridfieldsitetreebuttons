@@ -1,6 +1,6 @@
 {
     "name": "micschk/silverstripe-gridfieldsitetreebuttons",
-    "description": "Adds regular sitetree-edit buttons for pages managed in a Gridfield (simple alternative for versionedgridfield)",
+    "description": "Modifies GridFields & GridField detail forms to use standard page edit form (with versioning, history & settings). Simple alternative for versionedgridfield.",
     "type": "silverstripe-module",
     "keywords": ["silverstripe", "excludechildren", "sitetree", "gridfield"],
     "authors": [
@@ -8,7 +8,8 @@
         "name": "micschk"
     }],
     "require": {
-        "silverstripe/framework": "~3.0"
+        "silverstripe/framework": "~3.0",
+		"silverstripe/cms": "~3.0"
     },
 	"suggest": {
 		"micschk/silverstripe-excludechildren": "Hide subpages from sitetree (manage them from a gridfield instead)"
