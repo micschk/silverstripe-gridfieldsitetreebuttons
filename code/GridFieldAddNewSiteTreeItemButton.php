@@ -4,6 +4,35 @@
  */
 class GridFieldAddNewSiteTreeItemButton extends GridFieldAddNewButton {
 
+	/** @var int */
+	protected $parentID;
+
+
+	/**
+	 * Use the specified parent ID. If not set, default to the current page.
+	 *
+	 * TODO: Should probably perform a check to ensure that this is actually an instance of SiteTree and not some other random DataObject.
+	 *
+	 * @return int
+	 */
+	public function getParentID() {
+		if (isset($this->parentID)) return $this->parentID;
+		return Controller::curr()->getRequest()->param('ID');
+	}
+
+
+	/**
+	 * Allow user to customize the parent page ID.
+	 *
+	 * @param	$parentID
+	 * @return	$this
+	 */
+	public function setParentID($parentID) {
+		$this->parentID = (int) $parentID;
+		return $this;
+	}
+
+
 	public function getHTMLFragments($gridField) {
 		
 		if(!$this->buttonName) {
@@ -12,8 +41,8 @@ class GridFieldAddNewSiteTreeItemButton extends GridFieldAddNewButton {
 			$this->buttonName = _t('GridField.Add', 'Add {name}', array('name' => $objectName));
 		}
 		
-		$ParentID = Controller::curr()->getRequest()->param('ID');
-		// $ParentID = Controller::curr()->CurrentPageID();
+		$ParentID = $this->getParentID();
+
 		$data = new ArrayData(array(
 			//'NewLink' => Controller::join_links($gridField->Link('item'), 'new'),
 			'NewLink' => Controller::join_links(Director::baseURL(),'/admin/pages/add/AddForm/', 
