@@ -1,4 +1,12 @@
 <?php
+
+namespace Restruct\Silverstripe\SiteTreeButtons;
+
+use GridFieldAddNewButton;
+use Controller;
+use ArrayData;
+use Director;
+
 /**
  * This component provides a button for opening the default add new form for SiteTree items (Pages).
  */

@@ -1,5 +1,13 @@
 <?php
 
+namespace Restruct\Silverstripe\SiteTreeButtons;
+
+use GridFieldEditButton;
+use ArrayData;
+use Controller;
+use Director;
+
+
 class GridFieldEditSiteTreeItemButton extends GridFieldEditButton {
 
 	/**
