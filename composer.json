@@ -21,7 +21,7 @@
     "extra": {
         "installer-name": "silverstripe-gridfieldsitetreebuttons",
         "branch-alias": {
-            "dev-main": "5.x-dev"
+            "dev-main": "1.x-dev"
         },
         "expose": [
             "client/dist"
