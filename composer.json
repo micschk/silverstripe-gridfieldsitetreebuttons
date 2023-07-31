@@ -1,24 +1,35 @@
 {
-    "name": "micschk/silverstripe-gridfieldsitetreebuttons",
+    "name": "wedevelopnl/silverstripe-gridfieldsitetreebuttons",
     "description": "Modifies GridFields & GridField detail forms to use standard page edit form (with versioning, history & settings). Simple alternative for versionedgridfield.",
-    "type": "silverstripe-vendormodule",
     "keywords": [
         "silverstripe",
         "sitetree",
         "gridfield"
     ],
-    "authors": [
-        {
-            "name": "micschk"
-        }
-    ],
+    "authors": [{
+        "name": "WeDevelop",
+        "email": "development@wedevelop.nl"
+    }],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
-        "silverstripe/vendor-plugin": "^2.0",
-        "silverstripe/cms": "^5.0"
+        "silverstripe/framework": "^5.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.20"
+    },
+    "extra": {
+        "installer-name": "silverstripe-gridfieldsitetreebuttons",
+        "branch-alias": {
+            "dev-main": "5.x-dev"
+        },
+        "expose": [
+            "client/dist"
+        ]
     },
     "autoload": {
         "psr-4": {
-            "Restruct\\Silverstripe\\SiteTreeButtons\\": "src/"
+            "WeDevelop\\SiteTreeButtons\\": "src/"
         }
     }
 }

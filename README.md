@@ -1,42 +1,39 @@
 Sitetree Buttons for GridField
 ==============================
-
 Modifies GridFields & GridField detail forms to use standard page edit form (with versioning, history & settings).
 
-Best used in combination with:
- * [silverstripe-excludechildren module to hide pages from the sitetree](https://github.com/micschk/silverstripe-excludechildren)
+## Requirements
+* See `composer.json` requirements
 
-Or use/subclass the preconfigured GridfieldPages module, which contains both the excludechildren module and this sitetreebuttons module:
-* [silverstripe-gridfieldpages](https://github.com/micschk/silverstripe-gridfieldpages)
+## Installation
+```
+composer require wedevelopnl/silverstripe-gridfieldsitetreebuttons
+```
 
-
-## Screenshot
-*Manage (add & edit) SiteTree items from a GridField:*
-![](images/screenshots/holderscreen.png)
+After installation, run a `dev/build` with flush to complete the installation
 
 ## Usage
+In `GridFieldConfig`, replace `GridFieldAddNewButton('toolbar-header-right')` with `GridFieldAddNewSiteTreeItemButton('toolbar-header-right')` and `new GridFieldDetailForm()` with `GridFieldEditSiteTreeItemButton()`
 
-In GridFieldConfig, replace 
-	GridFieldAddNewButton('toolbar-header-right') 
-with
-	GridFieldAddNewSiteTreeItemButton('toolbar-header-right')
-and 
-	new GridFieldDetailForm() 
-with 
-	GridFieldEditSiteTreeItemButton()
+Example
+```php
+$gridFieldConfig = GridFieldConfig_RecordEditor::create();
+$gridFieldConfig->removeComponentsByType(GridFieldAddNewButton::class);
+$gridFieldConfig->addComponent(new GridFieldAddNewSiteTreeItemButton('toolbar-header-right'));
+$gridFieldConfig->removeComponentsByType(GridFieldAddNewButton::class);
+$gridFieldConfig->addComponent(new GridFieldEditSiteTreeItemButton());
+```
 
-Like this:
+## License
+See [License](LICENSE)
 
-	$gfconf = GridFieldConfig_RecordEditor::create();
-	$gfconf->removeComponentsByType('GridFieldAddNewButton');
-	$gfconf->addComponent(new GridFieldAddNewSiteTreeItemButton('toolbar-header-right'));
-	$gfconf->removeComponentsByType('GridFieldAddNewButton');
-	$gfconf->addComponent(new GridFieldEditSiteTreeItemButton());
+## Maintainers
+* [WeDevelop](https://www.wedevelop.nl/) <development@wedevelop.nl>
 
-## Requirements
-SilverStripe 3.0 or higher
+## Development and contribution
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.\
+See read our [contributing](CONTRIBUTING.md) document for more information.
 
-## Pro tip
-
-Use/subclass the prefabricated GridfieldPages module as a all-in-one base:
-* [silverstripe-gridfieldpages](https://github.com/micschk/silverstripe-gridfieldpages)
+## Development and contribution
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+See read our [contributing](CONTRIBUTING.md) document for more information.
